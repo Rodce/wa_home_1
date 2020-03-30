@@ -1,0 +1,11 @@
+- name: Apply common configurations to "all" host and install python3
+  hosts: all
+  become: yes
+  roles:
+    - user
+
+- name: install Gitlab
+  hosts: debian-A
+  become: yes
+  roles:
+    - geerlingguy.gitlab

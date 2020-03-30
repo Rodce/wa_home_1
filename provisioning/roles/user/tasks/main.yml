@@ -1,0 +1,41 @@
+---
+# tasks file for user
+
+# - name: create user for redhat
+#   block: #Redheat
+
+#     - name: Add the user 'ansible' with a bash shell, appending the group 'sudo' or 'wheel' to the user's groups
+#       user:
+#         name: ansible
+#         shell: /bin/bash
+#         groups: wheel
+#         append: yes
+#   when: ansible_os_family == "RedHat"
+
+
+# - name: create user for debian
+#   block: #debian
+
+#     - name: Add the user 'ansible' with a bash shell, appending the group 'sudo' or 'wheel' to the user's groups
+#       user:
+#         name: ansible
+#         shell: /bin/bash
+#         groups: sudo
+#         append: yes
+#   when: ansible_os_family == "Debian"
+
+- import_tasks: install.debian.yml
+  when: ansible_os_family == 'Debian'
+
+- import_tasks: install.redhat.yml
+  when: ansible_os_family == 'RedHat'
+
+- name: Add the user 'ansible'
+  user:
+    name: ansible
+    shell: /bin/bash
+- name: Add full acces to user 'ansible'
+  copy:
+    src: ansible
+    dest: '/etc/sudoers.d/'
+
