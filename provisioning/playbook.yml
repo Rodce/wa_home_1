@@ -2,7 +2,7 @@
   hosts: all
   become: yes
   roles:
-    - user
+    - all
 
 - name: install Gitlab
   hosts: debian-A

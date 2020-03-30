@@ -1,4 +1,5 @@
 ansible_host:               127.0.0.1
 ansible_user:               'vagrant'
-
+my_path: /home/O.KONOPATSKYY/Projects/wa_home_1/.vagrant/machines
+         
 

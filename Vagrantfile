@@ -33,13 +33,14 @@ Vagrant.configure("2") do |config|
     end
 
   end
-  config.vm.provision "ansible" do |ansible|
-    ansible.inventory_path = "provisioning/hosts"
-    ansible.playbook = "provisioning/playbook.yml"
-    # ansible.groups = {
-    #   "debin" => ["debian-A",'debian-B'],
-    #   "centos" => ["centos_C"],
-    # }  
-      # "group4" => ["other_node-[a:d]"], # silly group definition
-  end
+  # config.vm.provision "ansible" do |ansible|
+  #   ansible.inventory_path = "provisioning/hosts"
+  #   ansible.playbook = "provisioning/playbook.yml"
+
+  #   # ansible.groups = {
+  #   #   "debin" => ["debian-A",'debian-B'],
+  #   #   "centos" => ["centos_C"],
+  #   # }  
+  #     # "group4" => ["other_node-[a:d]"], # silly group definition
+  # end
 end

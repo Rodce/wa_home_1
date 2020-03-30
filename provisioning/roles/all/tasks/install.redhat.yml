@@ -5,3 +5,4 @@
       - python36
       - python36-pip
     state: present
+    update_cache: true
